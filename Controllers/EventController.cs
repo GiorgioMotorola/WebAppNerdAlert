@@ -26,5 +26,22 @@ namespace WebAppNerdAlert.Controllers
             Event events = await _eventRepository.GetByIdAsync(id);
             return View(events);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Create(Event events)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(events);
+            }
+            _eventRepository.Add(events);
+            return RedirectToAction("Index");
+        }
     }
 }

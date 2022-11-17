@@ -29,5 +29,21 @@ namespace WebAppNerdAlert.Controllers
             Hobby hobbies = await _hobbyRepository.GetByIdAsync(id);
             return View(hobbies);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Create(Hobby hobbies)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(hobbies);
+            }
+            _hobbyRepository.Add(hobbies);
+            return RedirectToAction("Index");
+        }
     }
 }

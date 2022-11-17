@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\downw\Desktop\projects\WebAppNerdAlert\WebAppNerdAlert
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Detail.cshtml]
