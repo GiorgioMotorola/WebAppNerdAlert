@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebAppNerdAlert.Data;
+using WebAppNerdAlert.Interfaces;
+using WebAppNerdAlert.Repository;
 
 namespace WebAppNerdAlert
 {
@@ -11,6 +13,8 @@ namespace WebAppNerdAlert
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IHobbyRepository, HobbyRepository>();
+            builder.Services.AddScoped<IEventRepository, EventRepository>();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));       

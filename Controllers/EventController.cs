@@ -1,27 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAppNerdAlert.Data;
+using WebAppNerdAlert.Interfaces;
 using WebAppNerdAlert.Models;
+using WebAppNerdAlert.Repository;
 
 namespace WebAppNerdAlert.Controllers
 {
     public class EventController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IEventRepository _eventRepository;
 
-        public EventController(ApplicationDbContext context)
+        public EventController(IEventRepository eventRepository)
         {
-            _context = context;
+            _eventRepository = eventRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Event> events = _context.Events.ToList();
+            IEnumerable<Event> events = await _eventRepository.GetAll();
             return View(events);
         }
 
-        public IActionResult Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
-            Event events = _context.Events.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            Event events = await _eventRepository.GetByIdAsync(id);
             return View(events);
         }
     }

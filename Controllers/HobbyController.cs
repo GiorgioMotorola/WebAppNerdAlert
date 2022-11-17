@@ -1,30 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAppNerdAlert.Data;
+using WebAppNerdAlert.Interfaces;
 using WebAppNerdAlert.Models;
 
 namespace WebAppNerdAlert.Controllers
 {
     public class HobbyController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        
+        private readonly IHobbyRepository _hobbyRepository;
 
-        public HobbyController(ApplicationDbContext context)
+        public HobbyController(IHobbyRepository hobbyRepository)
         {
-            _context = context;
+            
+            _hobbyRepository = hobbyRepository;
         }
 
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
-            List<Hobby> hobbies = _context.Hobbies.ToList();
+            IEnumerable<Hobby> hobbies = await  _hobbyRepository.GetAll();    
             return View(hobbies);
         }
 
 
-        public IActionResult Detail(int id)
+        public async Task <IActionResult> Detail(int id)
         {
-            Hobby hobby = _context.Hobbies.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
-            return View(hobby);
+            Hobby hobbies = await _hobbyRepository.GetByIdAsync(id);
+            return View(hobbies);
         }
     }
 }
