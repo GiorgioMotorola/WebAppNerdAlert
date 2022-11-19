@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using WebAppNerdAlert.Data;
+using WebAppNerdAlert.Helpers;
 using WebAppNerdAlert.Interfaces;
 using WebAppNerdAlert.Repository;
+using WebAppNerdAlert.Services;
 
 namespace WebAppNerdAlert
 {
@@ -15,6 +17,8 @@ namespace WebAppNerdAlert
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IHobbyRepository, HobbyRepository>();
             builder.Services.AddScoped<IEventRepository, EventRepository>();
+            builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+            builder.Services.AddScoped<IPhotoService, PhotoService>();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));       

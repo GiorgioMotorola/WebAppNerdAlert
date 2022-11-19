@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAppNerdAlert.Data;
 using WebAppNerdAlert.Interfaces;
 using WebAppNerdAlert.Models;
+using WebAppNerdAlert.ViewModels;
 
 namespace WebAppNerdAlert.Controllers
 {
@@ -10,11 +11,13 @@ namespace WebAppNerdAlert.Controllers
     {
         
         private readonly IHobbyRepository _hobbyRepository;
+        private readonly IPhotoService _photoService;
 
-        public HobbyController(IHobbyRepository hobbyRepository)
+        public HobbyController(IHobbyRepository hobbyRepository, IPhotoService photoService)
         {
             
             _hobbyRepository = hobbyRepository;
+            _photoService = photoService;
         }
 
         public async Task <IActionResult> Index()
@@ -36,14 +39,34 @@ namespace WebAppNerdAlert.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Create(Hobby hobbies)
+        public async Task<IActionResult> Create(CreateHobbyViewModel hobbiesVM)
         {
-            if(!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
-                return View(hobbies);
+                var result = await _photoService.AddPhotoAsync(hobbiesVM.Image);
+
+                var hobbies = new Hobby
+                {
+                    Title = hobbiesVM.Title,
+                    Description = hobbiesVM.Description,
+                    Image = result.Url.ToString(),
+                    Address = new Address
+                    { 
+                        Street = hobbiesVM.Address.Street,
+                        City = hobbiesVM.Address.City,
+                        State = hobbiesVM.Address.State
+                    }
+                };
+
+                    _hobbyRepository.Add(hobbies);
+                    return RedirectToAction("Index");
             }
-            _hobbyRepository.Add(hobbies);
-            return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError("", "Photo Upload Failed");
+            }
+            return View(hobbiesVM);
+            
         }
     }
 }

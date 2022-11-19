@@ -4,16 +4,19 @@ using WebAppNerdAlert.Data;
 using WebAppNerdAlert.Interfaces;
 using WebAppNerdAlert.Models;
 using WebAppNerdAlert.Repository;
+using WebAppNerdAlert.ViewModels;
 
 namespace WebAppNerdAlert.Controllers
 {
     public class EventController : Controller
     {
         private readonly IEventRepository _eventRepository;
+        private readonly IPhotoService _photoService;
 
-        public EventController(IEventRepository eventRepository)
+        public EventController(IEventRepository eventRepository, IPhotoService photoService)
         {
             _eventRepository = eventRepository;
+            _photoService = photoService;
         }
         public async Task<IActionResult> Index()
         {
@@ -34,14 +37,33 @@ namespace WebAppNerdAlert.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Create(Event events)
+        public async Task<IActionResult> Create(CreateEventViewModel eventsVM)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(events);
+                var result = await _photoService.AddPhotoAsync(eventsVM.Image);
+
+                var events = new Event
+                {
+                    Title = eventsVM.Title,
+                    Description = eventsVM.Description,
+                    Image = result.Url.ToString(),
+                    Address = new Address
+                    {
+                        Street = eventsVM.Address.Street,
+                        City = eventsVM.Address.City,
+                        State = eventsVM.Address.State
+                    }
+                };
+
+                _eventRepository.Add(events);
+                return RedirectToAction("Index");
             }
-            _eventRepository.Add(events);
-            return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError("", "Photo Upload Failed");
+            }
+            return View(eventsVM);
         }
     }
 }

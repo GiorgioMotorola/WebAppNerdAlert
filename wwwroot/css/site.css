@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: ghostwhite;
+}
