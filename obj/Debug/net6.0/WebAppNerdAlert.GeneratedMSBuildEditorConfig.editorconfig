@@ -20,8 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Index.cshtml]
@@ -32,8 +40,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Index.cshtml]

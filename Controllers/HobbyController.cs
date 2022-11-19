@@ -68,5 +68,84 @@ namespace WebAppNerdAlert.Controllers
             return View(hobbiesVM);
             
         }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var hobbies = await _hobbyRepository.GetByIdAsync(id);
+            if (hobbies == null) return View("Error");
+            var hobbiesVM = new EditHobbyViewModel
+            {
+                Title = hobbies.Title,
+                Description = hobbies.Description,
+                AddressId = hobbies.AddressId,
+                Address = hobbies.Address,
+                Url = hobbies.Image,
+                HobbyCategory = hobbies.HobbyCategory
+            };
+            return View(hobbiesVM);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditHobbyViewModel hobbiesVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed To Edit Hobby");
+                return View("Edit", hobbiesVM);
+            }
+
+            var userHobby = await _hobbyRepository.GetByIdAsyncNoTracking(id);
+
+            if (userHobby != null)
+            {
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userHobby.Image);
+
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Could Not Delete Photo");
+                    return View(hobbiesVM);
+                }
+                var photoResult = await _photoService.AddPhotoAsync(hobbiesVM.Image);
+
+                var hobbies = new Hobby
+                {
+                    Id = id,
+                    Title = hobbiesVM.Title,
+                    Description = hobbiesVM.Description,
+                    Image = photoResult.Url.ToString(),
+                    AddressId = hobbiesVM.AddressId,
+                    Address = hobbiesVM.Address
+                };
+
+                _hobbyRepository.Update(hobbies);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(hobbiesVM);
+            }
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var hobbiesDetails = await _hobbyRepository.GetByIdAsync(id);
+            if (hobbiesDetails == null) return View("Error");
+            return View(hobbiesDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+
+        public async Task<IActionResult> DeleteHobby(int id)
+        {
+            var hobbyDetails = await _hobbyRepository.GetByIdAsync(id);
+            if (hobbyDetails == null) return View("Error");
+
+            _hobbyRepository.Delete(hobbyDetails);
+            return RedirectToAction("Index");
+        }
     }
 }
