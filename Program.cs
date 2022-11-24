@@ -21,6 +21,7 @@ namespace WebAppNerdAlert
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IHobbyRepository, HobbyRepository>();
             builder.Services.AddScoped<IEventRepository, EventRepository>();
+            builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
             builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
             builder.Services.AddScoped<IPhotoService, PhotoService>();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -56,7 +57,7 @@ namespace WebAppNerdAlert
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
