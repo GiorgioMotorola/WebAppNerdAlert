@@ -12,10 +12,11 @@ namespace WebAppNerdAlert.Controllers
         
         private readonly IHobbyRepository _hobbyRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HobbyController(IHobbyRepository hobbyRepository, IPhotoService photoService)
+        public HobbyController(IHobbyRepository hobbyRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
-            
+            _httpContextAccessor = httpContextAccessor;
             _hobbyRepository = hobbyRepository;
             _photoService = photoService;
         }
@@ -34,7 +35,9 @@ namespace WebAppNerdAlert.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var currentUserId = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createHobbyViewModel = new CreateHobbyViewModel { AppUserId = currentUserId };
+            return View(createHobbyViewModel);
         }
 
         [HttpPost]
@@ -50,6 +53,7 @@ namespace WebAppNerdAlert.Controllers
                     Title = hobbiesVM.Title,
                     Description = hobbiesVM.Description,
                     Image = result.Url.ToString(),
+                    AppUserId = hobbiesVM.AppUserId,
                     Address = new Address
                     { 
                         Street = hobbiesVM.Address.Street,

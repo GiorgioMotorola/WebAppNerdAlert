@@ -12,11 +12,13 @@ namespace WebAppNerdAlert.Controllers
     {
         private readonly IEventRepository _eventRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public EventController(IEventRepository eventRepository, IPhotoService photoService)
+        public EventController(IEventRepository eventRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
             _eventRepository = eventRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -32,7 +34,9 @@ namespace WebAppNerdAlert.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var currentUserId = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createEventViewModel = new CreateEventViewModel { AppUserId = currentUserId };
+            return View(createEventViewModel);
         }
 
         [HttpPost]
@@ -48,6 +52,7 @@ namespace WebAppNerdAlert.Controllers
                     Title = eventsVM.Title,
                     Description = eventsVM.Description,
                     Image = result.Url.ToString(),
+                    AppUserId = eventsVM.AppUserId,
                     Address = new Address
                     {
                         Street = eventsVM.Address.Street,

@@ -22,6 +22,7 @@ namespace WebAppNerdAlert
             builder.Services.AddScoped<IHobbyRepository, HobbyRepository>();
             builder.Services.AddScoped<IEventRepository, EventRepository>();
             builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
             builder.Services.AddScoped<IPhotoService, PhotoService>();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>

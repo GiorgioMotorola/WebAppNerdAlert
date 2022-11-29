@@ -9,6 +9,7 @@
 }
 
 <form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
     <div class="form-group">
         <label asp-for="HobbyCategory">Select Hobby</label>
         <select asp-for="HobbyCategory" asp-items="@Html.GetEnumSelectList<HobbyCategory>()">

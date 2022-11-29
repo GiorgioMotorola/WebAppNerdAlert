@@ -17,5 +17,6 @@ namespace WebAppNerdAlert.ViewModels
         public string? Contact { get; set; }
         public IFormFile Image { get; set; }
         public EventCategory EventCategory { get; set; }
+        public string AppUserId { get; set; }
     }
 }

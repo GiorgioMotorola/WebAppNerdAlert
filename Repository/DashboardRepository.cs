@@ -16,15 +16,15 @@ namespace WebAppNerdAlert.Repository
         }
         public async Task<List<Event>> GetAllUserEvents()
         {
-            var currentUser = _httpContextAccessor.HttpContext?.User;
-            var userEvents = _context.Events.Where(r => r.AppUser.Id == currentUser.ToString());
+            var currentUser = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var userEvents = _context.Events.Where(r => r.AppUser.Id == currentUser);
             return userEvents.ToList();
         }
 
         public async Task<List<Hobby>> GetAllUserHobbies()
         {
-            var currentUser = _httpContextAccessor.HttpContext?.User;
-            var userHobbies = _context.Hobbies.Where(r => r.AppUser.Id == currentUser.ToString());
+            var currentUser = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var userHobbies = _context.Hobbies.Where(r => r.AppUser.Id == currentUser);
             return userHobbies.ToList();
         }
     }

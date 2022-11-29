@@ -11,5 +11,6 @@ namespace WebAppNerdAlert.ViewModels
         public Address Address { get; set; }
         public IFormFile Image { get; set; }
         public HobbyCategory HobbyCategory { get; set; }
+        public string AppUserId { get; set; }
     }
 }
