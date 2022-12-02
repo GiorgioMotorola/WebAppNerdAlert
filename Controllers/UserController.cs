@@ -22,7 +22,8 @@ namespace WebAppNerdAlert.Controllers
                 var userVM = new UserViewModel()
                 {
                     Id = user.Id,
-                    UserName = user.UserName
+                    UserName = user.UserName,
+                    ProfileImageUrl = user.ProfileImageUrl
                 };
                 result.Add(userVM);
             }

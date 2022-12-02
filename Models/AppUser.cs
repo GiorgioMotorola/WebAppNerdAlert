@@ -9,10 +9,13 @@ namespace WebAppNerdAlert.Models
     {
         public int? TimeStart { get; set; }
         public int? TimeEnd { get; set; }
+        public string? ProfileImageUrl { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
         [ForeignKey("Address")]
         public int? AddressId{ get; set; }
         public Address? Address { get; set; }
-        public ICollection<Hobby> Hobbies { get; set; }
-        public ICollection<Event> Events { get; set; }
+        public ICollection<Hobby>? Hobbies { get; set; }
+        public ICollection<Event>? Events { get; set; }
     }
 }
