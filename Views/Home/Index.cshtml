@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WebAppNerdAlert.ViewModels
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,129 +14,79 @@
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
     </div>
+
      <body class="text-center">
     <form class="form-signin">
-        <img class="mb-4" src="https://raw.githubusercontent.com/GiorgioMotorola/WebAppNerdAlert/master/Images/nerdglasses.jpg" alt="" width="700" height="425">
+        <img class="mb-3" src="https://raw.githubusercontent.com/GiorgioMotorola/WebAppNerdAlert/master/Images/nerdglasses.jpg" alt="" width="700" height="425">
       <h1 class="h3 mb-3 font-weight-normal"></h1>    
       <div class="checkbox mb-3">       
       </div>
      @* <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>*@
-        <input type="button" onclick="location.href='Account/Login';" value="LOGIN" />
-        <input type="button" onclick="location.href='Account/Register';" value="REGISTER" />
+
+        @*<input type="button" onclick="location.href='Account/Login';" value="LOGIN" />
+        <input type="button" onclick="location.href='Account/Register';" value="REGISTER" />*@
     </form>
   </body>
 
-    @*<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
+<section>
+    <div class="container">
+        @if (Model.Hobbies == null)
+        {
+            <h1 class="fw-light">
+                There are no Hobby Groups in your area! <a asp-area="" asp-controller="Account"
+                                                        asp-action="Login">Login</a> and create one!
+            </h1>
+        }
+        else
+        {
+            <div class="row justify-content-between mb-5">
+                <div class="col-center">
+                    <h3>Find Hobby Groups near @Model.City, @Model.State</h3>
+                    <a href="Hobby" class="btn btn-outline-primary">View all</a>
+                </div>
+               
             </div>
-            <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
+            <ul class="row feature-list feature-list-sm">
+                @foreach (var item in Model.Hobbies)
+                {
+                    <li class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <a href="#">
+                                <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                            </a>
+                            <div class="card-body">
+                                <a href="#">
+                                    <h4 class="card-title">@item.Title</h4>
+                                    <p class="card-text text-body">@item.Description</p>
+                                </a>
+                            </div>
+                            <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                                <div class="text-small">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                        <li class="list-inline-item"><i class="icon-message"></i> 14</li>
+                                    </ul>
+                                </div>
+                                <div class="dropup">
+                                    <a type="btn btn-success" asp-controller="Event" asp-action="Detail" asp-route-id="@item.Id"
+                               class="btn btn-sm btn-outline-secondary">View</a>
+                                    <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                        <a class="dropdown-item" href="#">Save</a>
+                                        <a class="dropdown-item" href="#">Share</a>
+                                        <a class="dropdown-item" href="#">Comment</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Report</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+        <!--end of row-->
     </div>
+    <!--end of container-->
+</section>
 
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-        <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-    </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-    </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-    </div>
-
-    <footer class="container py-5">
-        <div class="row">
-            <div class="col-12 col-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-                <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Cool stuff</a></li>
-                    <li><a class="text-muted" href="#">Random feature</a></li>
-                    <li><a class="text-muted" href="#">Team feature</a></li>
-                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                    <li><a class="text-muted" href="#">Another one</a></li>
-                    <li><a class="text-muted" href="#">Last time</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Resource</a></li>
-                    <li><a class="text-muted" href="#">Resource name</a></li>
-                    <li><a class="text-muted" href="#">Another resource</a></li>
-                    <li><a class="text-muted" href="#">Final resource</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Business</a></li>
-                    <li><a class="text-muted" href="#">Education</a></li>
-                    <li><a class="text-muted" href="#">Government</a></li>
-                    <li><a class="text-muted" href="#">Gaming</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Team</a></li>
-                    <li><a class="text-muted" href="#">Locations</a></li>
-                    <li><a class="text-muted" href="#">Privacy</a></li>
-                    <li><a class="text-muted" href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>*@
+    

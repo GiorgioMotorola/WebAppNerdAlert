@@ -29,7 +29,7 @@ namespace WebAppNerdAlert.Controllers
         {
             if (!ModelState.IsValid) return View(LoginViewModel);
 
-            var user = await _userManager.FindByEmailAsync(LoginViewModel.EmailAddress);
+            var user = await _userManager.FindByEmailAsync(LoginViewModel.Username);
 
             if (user != null)
             {
@@ -60,7 +60,7 @@ namespace WebAppNerdAlert.Controllers
         {
             if (!ModelState.IsValid) return View(registerViewModel);
 
-            var user = await _userManager.FindByEmailAsync(registerViewModel.EmailAddress);
+            var user = await _userManager.FindByEmailAsync(registerViewModel.Username);
             if(user != null)
             {
                 TempData["Error"] = "This Email Address is Aleady In Use";
@@ -69,8 +69,8 @@ namespace WebAppNerdAlert.Controllers
 
             var newUser = new AppUser()
             {
-                Email = registerViewModel.EmailAddress,
-                UserName = registerViewModel.EmailAddress
+                Email = registerViewModel.Username,
+                UserName = registerViewModel.Username
             };
             var newUserResponse = await _userManager.CreateAsync(newUser, registerViewModel.Password);
 
