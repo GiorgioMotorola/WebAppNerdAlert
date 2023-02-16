@@ -1,0 +1,83 @@
+﻿@using WebAppNerdAlert.Data.Enum
+@using WebAppNerdAlert.ViewModels;
+@model CreateEventViewModel
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
+    <div class="form-group">
+        <label asp-for="EventCategory">Select Event</label>
+        <select asp-for="EventCategory" asp-items="@Html.GetEnumSelectList<EventCategory>()">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="EventCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Description">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartTime">StartTime</label>
+        <input asp-for="StartTime" class="form-control" placeholder="StartTime">
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EntryFee">EntryFee</label>
+        <input asp-for="EntryFee" class="form-control" placeholder="EntryFee">
+        <span asp-validation-for="EntryFee" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Website">Website</label>
+        <input asp-for="Website" class="form-control" placeholder="Website">
+        <span asp-validation-for="Website" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Twitter">Twitter</label>
+        <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+        <span asp-validation-for="Twitter" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Facebook">Facebook</label>
+        <input asp-for="Facebook" class="form-control" placeholder="Facebook">
+        <span asp-validation-for="Facebook" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Contact">Contact</label>
+        <input asp-for="Contact" class="form-control" placeholder="Contact">
+        <span asp-validation-for="Contact" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.Street">Street</label>
+        <input asp-for="Address.Street" class="form-control" placeholder="Street">
+        <span asp-validation-for="Address.Street" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.City">City</label>
+        <input asp-for="Address.City" class="form-control" placeholder="City">
+        <span asp-validation-for="Address.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.State">State</label>
+        <input asp-for="Address.State" class="form-control" placeholder="State">
+        <span asp-validation-for="Address.State" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

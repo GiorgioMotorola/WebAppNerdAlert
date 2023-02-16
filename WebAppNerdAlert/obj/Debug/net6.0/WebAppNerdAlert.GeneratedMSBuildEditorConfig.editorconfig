@@ -1,0 +1,109 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebAppNerdAlert
+build_property.RootNamespace = WebAppNerdAlert
+build_property.ProjectDir = C:\Users\downw\Desktop\projects\WebAppNerdAlert\WebAppNerdAlert\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\downw\Desktop\projects\WebAppNerdAlert\WebAppNerdAlert
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Dashboard/EditUserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVkaXRVc2VyUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Hobby/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9iYnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/User/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/downw/Desktop/projects/WebAppNerdAlert/WebAppNerdAlert/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-f7z9mft789
